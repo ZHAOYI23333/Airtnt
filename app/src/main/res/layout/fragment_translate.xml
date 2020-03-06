@@ -18,18 +18,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="0dp"
-        android:layout_height="250dp"
-        android:text="SPANISH"
-        android:textSize="50sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnFromLang"
         android:layout_width="0dp"
         android:layout_height="250dp"
         android:layout_marginTop="20dp"
@@ -39,5 +30,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_gallery" />
+
+    <Button
+        android:id="@+id/btnToLang"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:text="SPANISH"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnFromLang" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
