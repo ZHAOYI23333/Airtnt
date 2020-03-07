@@ -54,19 +54,30 @@ public class TranslateFragment extends Fragment implements View.OnClickListener 
         return root;
     }
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        History.get(getActivity()).updateHistory("Updated hist");
+    }
+
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btnFromLang:
                 //
-                hist.insertDialog("From Lang BLABLABLA");
-                topText.setText(hist.getDialog().peek());
+                hist.addHistory("From Lang BLABLABLA");
+                topText.setText(hist.getHistory().toString());
                 break;
             case R.id.btnToLang:
                 //
-                hist.insertDialog("To Lang BLABLABLA");
-                topText.setText(hist.getDialog().peek());
+                hist.addHistory("To Lang BLABLABLA");
+                topText.setText(hist.getHistory().toString());
                 break;
 
         }

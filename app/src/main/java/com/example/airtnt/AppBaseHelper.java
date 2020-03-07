@@ -3,13 +3,13 @@ package com.example.airtnt;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
-import com.example.airtnt.AppDbSchema.LanguageTable;
 import com.example.airtnt.AppDbSchema.HistoryTable;
 
 public class AppBaseHelper extends SQLiteOpenHelper {
 
-    private static final int VERSION = 1;
+    private static final int VERSION = 2;
     private static final String DATABASE_NAME = "appBase.db";
 
     public AppBaseHelper(Context context) {
@@ -28,6 +28,8 @@ public class AppBaseHelper extends SQLiteOpenHelper {
                 "CREATE TABLE " + HistoryTable.NAME + "(" + "_id integer primary key autoincrement, " +
                         HistoryTable.Cols.DIALOG + " TEXT "+ ")"
         );
+        Log.d("Database", "database created");
+
 
     }
 
