@@ -13,4 +13,12 @@
     <string name="menu_tools">Setting</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="not_registered">Not Registered</string>
+    <string name="register">REGISTER</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="already_registered">Already Registered?</string>
+    <string name="login_signup">Login/Signup</string>
 </resources>

@@ -18,6 +18,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/button_login_signup"
+        android:layout_width="190dp"
+        android:layout_height="40dp"
+        android:background="#11A0BE"
+        android:text="@string/login_signup"
+        android:textColor="#ffffff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="532dp" />
+
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="0dp"
