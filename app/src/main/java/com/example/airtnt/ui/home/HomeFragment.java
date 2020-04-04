@@ -18,10 +18,9 @@ import com.example.airtnt.LoginActivity;
 import com.example.airtnt.R;
 import com.example.airtnt.RegisterActivity;
 
-public class HomeFragment extends Fragment implements View.OnClickListener{
+public class HomeFragment extends Fragment{
 
     private HomeViewModel homeViewModel;
-    Button mButtonLoginSignup;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -35,15 +34,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
                 textView.setText(s);
             }
         });
-        mButtonLoginSignup = root.findViewById(R.id.button_login_signup);
 
-        mButtonLoginSignup.setOnClickListener(this);
         return root;
     }
 
-
-    public void onClick(View v) {
-        Intent moveToLogin = new Intent(getContext(), LoginActivity.class);
-        startActivity(moveToLogin);
-    }
 }

@@ -5,9 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
-import com.example.airtnt.AppDbSchema.HistoryTable;
 
 public class LoginDatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME="register.db";
@@ -55,6 +53,12 @@ public class LoginDatabaseHelper extends SQLiteOpenHelper {
             return true;
         else
             return false;
+    }
+
+    public Cursor getAllData(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("select * from registeruser", null);
+        return cursor;
     }
 
 }

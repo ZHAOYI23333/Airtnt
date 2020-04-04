@@ -1,5 +1,6 @@
 package com.example.airtnt;
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -24,11 +25,13 @@ import android.view.Menu;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private static final String TAG = "MainActivity";
+    LoginDatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +52,15 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+        db = new LoginDatabaseHelper(this);
+        Cursor cursor = db.getAllData();
+        if(cursor.getCount()==0){
+            Toast.makeText(getApplicationContext(), "NO DATA",Toast.LENGTH_SHORT).show();
+        }else{
+            while(cursor.moveToNext()){
+                updateNavHeader(cursor);
+            }
+        }
     }
 
     @Override
@@ -67,6 +79,13 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
+    public void updateNavHeader(Cursor cursor){
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        View headerView = navigationView.getHeaderView(0);
+        TextView username = headerView.findViewById(R.id.nav_username);
+        username.setText(cursor.getString(1));
+
+    }
 
     @Override
     public void onResume() {
